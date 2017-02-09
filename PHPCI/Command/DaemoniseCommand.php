@@ -84,6 +84,9 @@ class DaemoniseCommand extends Command
 
             try {
                 $buildCount = $runner->run($emptyInput, $output);
+            } catch (\PDOException $e) {
+                $output->writeln('<error>Lost database connection; bailing.</error>');
+                throw $ex;
             } catch (\Exception $e) {
                 $output->writeln('<error>Exception: ' . $e->getMessage() . '</error>');
                 $output->writeln('<error>Line: ' . $e->getLine() . ' - File: ' . $e->getFile() . '</error>');
