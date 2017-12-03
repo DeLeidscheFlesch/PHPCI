@@ -8,94 +8,91 @@
  */
 
 $strings = array(
-    'language_name' => 'English',
-    'language' => 'Language',
+    'language_name' => '简体中文',
+    'language' => '语言选择',
 
     // Log in:
-    'log_in_to_phpci' => 'Log in to PHPCI',
-    'login_error' => 'Incorrect email address or password',
-    'forgotten_password_link' => 'Forgotten your password?',
-    'reset_emailed' => 'We\'ve emailed you a link to reset your password.',
-    'reset_header' => '<strong>Don\'t worry!</strong><br>Just enter your email address below and we\'ll email
-                            you a link to reset your password.',
-    'reset_email_address' => 'Enter your email address:',
-    'reset_send_email' => 'Email password reset',
-    'reset_enter_password' => 'Please enter a new password',
-    'reset_new_password' => 'New password:',
-    'reset_change_password' => 'Change password',
-    'reset_no_user_exists' => 'No user exists with that email address, please try again.',
-    'reset_email_body' => 'Hi %s,
+    'log_in_to_phpci' => '登录 PHPCI',
+    'login_error' => '邮箱或密码错误',
+    'forgotten_password_link' => '忘记密码？',
+    'reset_emailed' => '已发送重置密码邮件.',
+    'reset_header' => '<strong>不用担心！</strong><br>只需要输入您的邮箱地址，我们将会给您的邮箱发送含有重置密码链接的邮件。',
+    'reset_email_address' => '输入您的邮箱地址：',
+    'reset_send_email' => '邮件重设密码',
+    'reset_enter_password' => '请输入新密码',
+    'reset_new_password' => '新密码：',
+    'reset_change_password' => '更改密码',
+    'reset_no_user_exists' => '不存该该邮箱用户，请检查后重试！',
+    'reset_email_body' => '您好 %s,
+    
+您收到这封邮件，是因为您或者别人发起了来自PHPCI的密码重置请求。
 
-You have received this email because you, or someone else, has requested a password reset for PHPCI.
+如果确实是您发起的，请点击链接去重置您的密码：%ssession/reset-password/%d/%s
 
-If this was you, please click the following link to reset your password: %ssession/reset-password/%d/%s
+否则，请忽视这封邮件，这不会发生任何事情。
 
-Otherwise, please ignore this email and no action will be taken.
-
-Thank you,
+多谢,
 
 PHPCI',
 
-    'reset_email_title' => 'PHPCI Password Reset for %s',
-    'reset_invalid' => 'Invalid password reset request.',
-    'email_address' => 'Email Address',
-    'login' => 'Login / Email Address',
-    'password' => 'Password',
-    'log_in' => 'Log in',
+    'reset_email_title' => '给 %s 来自 PHPCI 的密码重置邮件',
+    'reset_invalid' => '密码重置请求失败！',
+    'email_address' => '邮箱地址',
+    'password' => '密码',
+    'log_in' => '登录',
 
 
     // Top Nav
-    'toggle_navigation' => 'Toggle Navigation',
-    'n_builds_pending' => '%d builds pending',
-    'n_builds_running' => '%d builds running',
-    'edit_profile' => 'Edit Profile',
-    'sign_out' => 'Sign Out',
-    'branch_x' => 'Branch: %s',
-    'created_x' => 'Created: %s',
-    'started_x' => 'Started: %s',
+    'toggle_navigation' => '导航切换',
+    'n_builds_pending' => '%d 等待构建',
+    'n_builds_running' => '%d 正在构建',
+    'edit_profile' => '编辑资料',
+    'sign_out' => '注销',
+    'branch_x' => '分支: %s',
+    'created_x' => '创建于: %s',
+    'started_x' => '开始于: %s',
 
     // Sidebar
-    'hello_name' => 'Hello, %s',
-    'dashboard' => 'Dashboard',
-    'admin_options' => 'Admin Options',
-    'add_project' => 'Add Project',
-    'settings' => 'Settings',
-    'manage_users' => 'Manage Users',
-    'plugins' => 'Plugins',
-    'view' => 'View',
-    'build_now' => 'Build Now',
-    'edit_project' => 'Edit Project',
-    'delete_project' => 'Delete Project',
+    'hello_name' => '您好, %s',
+    'dashboard' => '仪表盘',
+    'admin_options' => '管理选项',
+    'add_project' => '新增项目',
+    'settings' => '设置',
+    'manage_users' => '用户管理',
+    'plugins' => '插件',
+    'view' => '查看',
+    'build_now' => '立即构建',
+    'edit_project' => '编辑项目',
+    'delete_project' => '删除项目',
 
     // Project Summary:
-    'no_builds_yet' => 'No builds yet!',
-    'x_of_x_failed' => '%d out of the last %d builds failed.',
-    'x_of_x_failed_short' => '%d / %d failed.',
-    'last_successful_build' => ' The last successful build was %s.',
-    'never_built_successfully' => ' This project has never built successfully.',
-    'all_builds_passed' => 'All of the last %d builds passed.',
-    'all_builds_passed_short' => '%d / %d passed.',
-    'last_failed_build' => ' The last failed build was %s.',
-    'never_failed_build' => ' This project has never failed a build.',
-    'view_project' => 'View Project',
+    'no_builds_yet' => '没有任何构建',
+    'x_of_x_failed' => '%d 的最后一个 %d 构建失败！',
+    'x_of_x_failed_short' => '%d / %d 失败。',
+    'last_successful_build' => ' 最后一次构建成功的是 %s.',
+    'never_built_successfully' => ' 该项目构建从来没有成功过！',
+    'all_builds_passed' => '构建记录中 %d 次构建通过。',
+    'all_builds_passed_short' => '%d / %d 通过。',
+    'last_failed_build' => ' 最近一次构建失败的是 %s。',
+    'never_failed_build' => ' 该项目构建从未失败过。',
+    'view_project' => '查看项目',
 
     // Timeline:
-    'latest_builds' => 'Latest Builds',
-    'pending' => 'Pending',
-    'running' => 'Running',
-    'success' => 'Success',
-    'successful' => 'Successful',
-    'failed' => 'Failed',
+    'latest_builds' => '最近构建',
+    'pending' => '等待中',
+    'running' => '构建中',
+    'success' => '成功',
+    'successful' => '成功',
+    'failed' => '失败',
     'manual_build' => 'Manual Build',
 
     // Add/Edit Project:
-    'new_project' => 'New Project',
-    'project_x_not_found' => 'Project with ID %d does not exist.',
-    'project_details' => 'Project Details',
-    'public_key_help' => 'To make it easier to get started, we\'ve generated an SSH key pair for you to use
-                            for this project. To use it, just add the following public key to the "deploy keys" section
-                            of your chosen source code hosting platform.',
-    'select_repository_type' => 'Select repository type...',
+    'new_project' => '新项目',
+    'project_x_not_found' => '项目 ID %d 不存在。',
+    'project_details' => '项目详情',
+    'public_key_help' => '为了帮助您更简单的开始项目构建，我们生成了以下 SSH key 对用于该项目。要使用它，请添加以下公钥 “deploy keys” 至您选择的源代码托管平台',
+
+    'select_repository_type' => '选择仓库类型...',
     'github' => 'GitHub',
     'bitbucket' => 'Bitbucket',
     'gitlab' => 'GitLab',
@@ -104,68 +101,66 @@ PHPCI',
     'hg'    => 'Mercurial',
     'svn'   => 'Subversion',
 
-    'where_hosted' => 'Where is your project hosted?',
-    'choose_github' => 'Choose a GitHub repository:',
+    'where_hosted' => '您的代码托管在？',
+    'choose_github' => '选择一个 GitHub 仓库：',
 
-    'repo_name' => 'Repository Name / URL (Remote) or Path (Local)',
-    'project_title' => 'Project Title',
-    'project_private_key' => 'Private key to use to access repository
-                                (leave blank for local and/or anonymous remotes)',
-    'build_config' => 'PHPCI build config for this project
-                                (if you cannot add a phpci.yml file in the project repository)',
-    'default_branch' => 'Default branch name',
-    'allow_public_status' => 'Enable public status page and image for this project?',
-    'archived' => 'Archived',
-    'archived_menu' => 'Archived',
-    'save_project' => 'Save Project',
+    'repo_name' => '仓库名称 / URL (本地) or Path (本地)',
+    'project_title' => '项目标题',
+    'project_private_key' => '访问仓库私有秘钥
+                                (本地或公共仓库可为空)',
+    'build_config' => '该项目 PHPCI 构建配置文件
+                                (如果您无法在该项目仓库创建 phpci.yml 文件)',
+    'default_branch' => '默认分支名称',
+    'allow_public_status' => '启用此项目的公共状态页和图像？',
+    'archived' => '归档',
+    'archived_menu' => '归档',
+    'save_project' => '保存项目',
 
-    'error_mercurial' => 'Mercurial repository URL must be start with http:// or https://',
-    'error_remote' => 'Repository URL must be start with git://, http:// or https://',
-    'error_gitlab' => 'GitLab Repository name must be in the format "user@domain.tld:owner/repo.git"',
-    'error_github' => 'Repository name must be in the format "owner/repo"',
-    'error_bitbucket' => 'Repository name must be in the format "owner/repo"',
-    'error_path' => 'The path you specified does not exist.',
+    'error_mercurial' => 'Mercurial 仓库 URL 必须以 http:// or https:// 开始',
+    'error_remote' => '仓库 URL 必须以 git://, http:// or https:// 开始',
+    'error_gitlab' => 'GitLab 仓库名称必须符合 "user@domain.tld:owner/repo.git" 格式',
+    'error_github' => '仓库名称必须符合 "owner/repo" 格式',
+    'error_bitbucket' => '仓库名称必须符合 "owner/repo" 格式',
+    'error_path' => '您制定的路径不存在',
 
     // View Project:
     'all_branches' => 'All Branches',
     'builds' => 'Builds',
     'id' => 'ID',
-    'date' => 'Date',
-    'project' => 'Project',
-    'commit' => 'Commit',
-    'branch' => 'Branch',
-    'status' => 'Status',
-    'prev_link' => '&laquo; Prev',
-    'next_link' => 'Next &raquo;',
-    'public_key' => 'Public Key',
-    'delete_build' => 'Delete Build',
+    'date' => '日期',
+    'project' => '项目',
+    'commit' => '提交',
+    'branch' => '分支',
+    'status' => '状态',
+    'prev_link' => '&laquo; 上一个',
+    'next_link' => '下一个 &raquo;',
+    'public_key' => '公共秘钥',
+    'delete_build' => '删除构建',
 
     'webhooks' => 'Webhooks',
-    'webhooks_help_github' => 'To automatically build this project when new commits are pushed, add the URL below
-                                as a new "Webhook" in the <a href="https://github.com/%s/settings/hooks">Webhooks
-                                and Services</a>  section of your GitHub repository.',
+    'webhooks_help_github' => '要想当您的仓库由新的提交推送时自动构建，请在您的Github仓库的 
+                                <a href="https://github.com/%s/settings/hooks">Webhooks and Services</a> 
+                                将该URL添加至新增 "Webhook" 中。',
 
-    'webhooks_help_gitlab' => 'To automatically build this project when new commits are pushed, add the URL below
-                                as a "WebHook URL" in the Web Hooks section of your GitLab repository.',
+    'webhooks_help_gitlab' => '要想当您的仓库由新的提交推送时自动构建，请在您的GitLab仓库的 "WebHook URL" 添加该URL。',
 
-    'webhooks_help_bitbucket' => 'To automatically build this project when new commits are pushed, add the URL below
-                                as a "POST" service in the
+    'webhooks_help_bitbucket' => '要想当您的仓库由新的提交推送时自动构建，请在您的GitLab仓库的
                                 <a href="https://bitbucket.org/%s/admin/services">
-                                Services</a> section of your Bitbucket repository.',
+                                Services</a> 将该URL添加成 “POST服务”。',
 
     // View Build
     'errors' => 'Errors',
     'information' => 'Information',
 
-    'build_x_not_found' => 'Build with ID %d does not exist.',
+    'build_x_not_found' => '构建 ID %d 不存在。',
     'build_n' => 'Build %d',
-    'rebuild_now' => 'Rebuild Now',
+    'rebuild_now' => '重新构建',
 
 
-    'committed_by_x' => 'Committed by %s',
-    'commit_id_x' => 'Commit: %s',
+    'committed_by_x' => '由 %s 提交',
+    'commit_id_x' => '提交: %s',
 
-    'chart_display' => 'This chart will display once the build has completed.',
+    'chart_display' => '构建一旦完成该图表将会显示',
 
     'build' => 'Build',
     'lines' => 'Lines',
@@ -197,8 +192,8 @@ PHPCI',
     'codeception_feature' => 'Feature',
     'codeception_suite' => 'Suite',
     'codeception_time' => 'Time',
-    'codeception_synopsis' => '<strong>%1$d</strong> tests carried out in <strong>%2$f</strong> seconds.
-                               <strong>%3$d</strong> failures.',
+    'codeception_synopsis' => '<strong>%1$d</strong> 测试进行了 <strong>%2$f</strong> 秒.
+                               <strong>%3$d</strong> 失败。',
 
     'file' => 'File',
     'line' => 'Line',
@@ -225,41 +220,37 @@ PHPCI',
     'test_total' => '%d test(s)',
 
     // Users
-    'name' => 'Name',
-    'password_change' => 'Password (leave blank if you don\'t want to change)',
-    'save' => 'Save &raquo;',
-    'update_your_details' => 'Update your details',
-    'your_details_updated' => 'Your details have been updated.',
-    'add_user' => 'Add User',
-    'is_admin' => 'Is Admin?',
-    'yes' => 'Yes',
-    'no' => 'No',
-    'edit' => 'Edit',
-    'edit_user' => 'Edit User',
-    'delete_user' => 'Delete User',
-    'user_n_not_found' => 'User with ID %d does not exist.',
-    'is_user_admin' => 'Is this user an administrator?',
-    'save_user' => 'Save User',
+    'name' => '名称',
+    'password_change' => '密码 (如果要修改密码请填入新密码,否则留空空)',
+    'save' => '保存 &raquo;',
+    'update_your_details' => '更新您的个人信息',
+    'your_details_updated' => '您的信息已经更新。',
+    'add_user' => '新增用户',
+    'is_admin' => '是否设为管理员?',
+    'yes' => '是',
+    'no' => '否',
+    'edit' => '编辑',
+    'edit_user' => '编辑用户',
+    'delete_user' => '删除用户',
+    'user_n_not_found' => '用户 ID %d 不存在。',
+    'is_user_admin' => '该用户是否为管理员',
+    'save_user' => '保存用户',
 
     // Settings:
-    'settings_saved' => 'Your settings have been saved.',
-    'settings_check_perms' => 'Your settings could not be saved, check the permissions of your config.yml file.',
-    'settings_cannot_write' => 'PHPCI cannot write to your config.yml file, settings may not be saved properly
-                                until this is rectified.',
-    'settings_github_linked' => 'Your GitHub account has been linked.',
-    'settings_github_not_linked' => 'Your GitHub account could not be linked.',
-    'build_settings' => 'Build Settings',
+    'settings_saved' => '您的设置已经保存。',
+    'settings_check_perms' => '权限不足,您的设置无法保存, 请检查 config.yml 文件.',
+    'settings_cannot_write' => 'PHPCI 无法写入 config.yml 文件, 在这个问题解决前设置可能无法正常保存',
+    'settings_github_linked' => '您的 GitHub 账户已经连接。',
+    'settings_github_not_linked' => '您的 GitHub 无法连接。',
+    'build_settings' => '构建设置',
     'github_application' => 'GitHub Application',
-    'github_sign_in' => 'Before you can start using GitHub, you need to <a href="%s">sign in</a> and grant
-                            PHPCI access to your account.',
-    'github_phpci_linked' => 'PHPCI is successfully linked to GitHub account.',
-    'github_where_to_find' => 'Where to find these...',
-    'github_where_help' => 'If you own the application you would like to use, you can find this information within your
-                            <a href="https://github.com/settings/applications">applications</a> settings area.',
+    'github_sign_in' => '在使用您的 GitHub 账号之前, 您需要登录 GitHub , 并允许 PHPCI 访问您的账户。',
+    'github_phpci_linked' => 'PHPCI 成功连接到您的 GitHub 账户。',
+    'github_where_to_find' => '在哪里可以找到...',
+    'github_where_help' => '如果您想使用您自己的应用, 您可以在<a href="https://github.com/settings/applications">applications</a> 的 setting 中 找到相关信息。',
 
-    'email_settings' => 'Email Settings',
-    'email_settings_help' => 'Before PHPCI can send build status emails,
-                                you need to configure your SMTP settings below.',
+    'email_settings' => '邮箱设置',
+    'email_settings_help' => 'PHPCI在发送构建状态的邮件之前,您需要配置您的SMTP设置如下。',
 
     'application_id' => 'Application ID',
     'application_secret' => 'Application Secret',
@@ -268,39 +259,35 @@ PHPCI',
     'smtp_port' => 'SMTP Port',
     'smtp_username' => 'SMTP Username',
     'smtp_password' => 'SMTP Password',
-    'from_email_address' => 'From Email Address',
-    'default_notification_address' => 'Default Notification Email Address',
-    'use_smtp_encryption' => 'Use SMTP Encryption?',
+    'from_email_address' => '邮件来自',
+    'default_notification_address' => '通知默认邮件',
+    'use_smtp_encryption' => 'SMTP 使用哪种方式加密?',
     'none' => 'None',
     'ssl' => 'SSL',
     'tls' => 'TLS',
 
-    'failed_after' => 'Consider a build failed after',
-    '5_mins' => '5 Minutes',
-    '15_mins' => '15 Minutes',
-    '30_mins' => '30 Minutes',
-    '1_hour' => '1 Hour',
-    '3_hours' => '3 Hours',
-
-    // Latest Builds
-    'show_branch' => 'Display branches',
+    'failed_after' => '构建失败后重新构建间隔',
+    '5_mins' => '5 分钟',
+    '15_mins' => '15 分钟',
+    '30_mins' => '30 分钟',
+    '1_hour' => '1 小时',
+    '3_hours' => '3 小时',
 
     // Plugins
-    'cannot_update_composer' => 'PHPCI cannot update composer.json for you as it is not writable.',
-    'x_has_been_removed' => '%s has been removed.',
-    'x_has_been_added' => '%s has been added to composer.json for you and will be installed next time
-                            you run composer update.',
-    'enabled_plugins' => 'Enabled Plugins',
-    'provided_by_package' => 'Provided By Package',
-    'installed_packages' => 'Installed Packages',
-    'suggested_packages' => 'Suggested Packages',
-    'title' => 'Title',
-    'description' => 'Description',
-    'version' => 'Version',
-    'install' => 'Install &raquo;',
-    'remove' => 'Remove &raquo;',
-    'search_packagist_for_more' => 'Search Packagist for more packages',
-    'search' => 'Search &raquo;',
+    'cannot_update_composer' => '由于 composer.json 文件不可写 PHPCI 无法为您更新该文件, ',
+    'x_has_been_removed' => '%s 已经移除',
+    'x_has_been_added' => '%s 已经为您添加至 composer.json , 当您下次执行 composer update 时相关库将会安装',
+    'enabled_plugins' => '已启用插件',
+    'provided_by_package' => '来自',
+    'installed_packages' => '已安装插件',
+    'suggested_packages' => '建议安装插件',
+    'title' => '名称',
+    'description' => '说明',
+    'version' => '版本',
+    'install' => '安装 &raquo;',
+    'remove' => '移除 &raquo;',
+    'search_packagist_for_more' => '搜索获取更多插件',
+    'search' => '搜索 &raquo;',
 
     // Summary plugin
     'build-summary' => 'Summary',
@@ -376,7 +363,7 @@ PHPCI',
     'commit_id_option' => 'Commit ID to build',
     'branch_name_option' => 'Branch to build',
     'add_to_queue_failed' => 'Build created successfully, but failed to add to build queue. This usually happens
-                                when PHPCI is set to use a beanstalkd server that does not exist,
+                                when PHPCI is set to use a beanstalkd server that does not exist, 
                                 or your beanstalkd server has stopped.',
 
     // Run Command

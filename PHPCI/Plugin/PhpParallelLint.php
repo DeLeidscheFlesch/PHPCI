@@ -42,12 +42,23 @@ class PhpParallelLint implements \PHPCI\Plugin
     protected $ignore;
 
     /**
+     * @var string - comma separated list of file extensions
+     */
+    protected $extensions;
+
+    /**
+     * @var bool - enable short tags
+     */
+    protected $shortTag;
+
+    /**
      * Standard Constructor
      *
-     * $options['directory'] Output Directory. Default: %BUILDPATH%
-     * $options['filename']  Phar Filename. Default: build.phar
-     * $options['regexp']    Regular Expression Filename Capture. Default: /\.php$/
-     * $options['stub']      Stub Content. No Default Value
+     * $options['directory']  Output Directory. Default: %BUILDPATH%
+     * $options['filename']   Phar Filename. Default: build.phar
+     * $options['extensions'] Filename extensions. Default: php
+     * $options['shorttags']  Enable short tags. Default: false
+     * $options['stub']       Stub Content. No Default Value
      *
      * @param Builder $phpci
      * @param Build   $build
@@ -59,6 +70,8 @@ class PhpParallelLint implements \PHPCI\Plugin
         $this->build = $build;
         $this->directory = $phpci->buildPath;
         $this->ignore = $this->phpci->ignore;
+        $this->extensions = 'php';
+        $this->shortTag = false;
 
         if (isset($options['directory'])) {
             $this->directory = $phpci->buildPath.$options['directory'];
@@ -66,6 +79,19 @@ class PhpParallelLint implements \PHPCI\Plugin
 
         if (isset($options['ignore'])) {
             $this->ignore = $options['ignore'];
+        }
+
+        if (isset($options['shorttags'])) {
+            $this->shortTag = (strtolower($options['shorttags']) == 'true');
+        }
+
+        if (isset($options['extensions'])) {
+            // Only use if this is a comma delimited list
+            $pattern = '/^([a-z]+)(,\ *[a-z]*)*$/';
+
+            if (preg_match($pattern, $options['extensions'])) {
+                $this->extensions = str_replace(' ', '', $options['extensions']);
+            }
         }
     }
 
@@ -78,9 +104,11 @@ class PhpParallelLint implements \PHPCI\Plugin
 
         $phplint = $this->phpci->findBinary('parallel-lint');
 
-        $cmd = $phplint . ' %s "%s"';
+        $cmd = $phplint . ' -e %s' . '%s %s "%s"';
         $success = $this->phpci->executeCommand(
             $cmd,
+            $this->extensions,
+            ($this->shortTag ? ' -s' : ''),
             $ignore,
             $this->directory
         );

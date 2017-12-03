@@ -178,8 +178,9 @@ class WebhookController extends \b8\Controller
         $commit = $this->getParam('commit');
         $commitMessage = $this->getParam('message');
         $committer = $this->getParam('committer');
+        $rebuild = $this->getParam('rebuild') ?? false;
 
-        return $this->createBuild($project, $commit, $branch, $committer, $commitMessage);
+        return $this->createBuild($project, $commit, $branch, $committer, $commitMessage, $rebuild);
     }
 
     /**
@@ -325,7 +326,7 @@ class WebhookController extends \b8\Controller
                     'remote_url' => $payload['pull_request']['head']['repo'][$remoteUrlKey],
                 );
 
-                $results[$id] = $this->createBuild($project, $id, $branch, $committer, $message, $extra);
+                $results[$id] = $this->createBuild($project, $id, $branch, $committer, $message, false, $extra);
                 $status = 'ok';
             } catch (Exception $ex) {
                 $results[$id] = array('status' => 'failed', 'error' => $ex->getMessage());
@@ -385,6 +386,24 @@ class WebhookController extends \b8\Controller
         return array('status' => 'ignored', 'message' => 'Unusable payload.');
     }
 
+
+    /**
+     * Called by POSTing to /webhook/svn/<project_id>?branch=<branch>&commit=<commit>
+     *
+     * @author Sylvain Lévesque <slevesque@gezere.com>
+     * @param string $projectId
+     */
+    public function svn($projectId)
+    {
+        $project = $this->fetchProject($projectId, 'svn');
+        $branch = $this->getParam('branch', $project->getBranch());
+        $commit = $this->getParam('commit');
+        $commitMessage = $this->getParam('message');
+        $committer = $this->getParam('committer');
+
+        return $this->createBuild($project, $commit, $branch, $committer, $commitMessage);
+    }
+
     /**
      * Wrapper for creating a new build.
      *
@@ -393,6 +412,7 @@ class WebhookController extends \b8\Controller
      * @param string $branch
      * @param string $committer
      * @param string $commitMessage
+     * @param bool $rebuild
      * @param array $extra
      *
      * @return array
@@ -405,16 +425,19 @@ class WebhookController extends \b8\Controller
         $branch,
         $committer,
         $commitMessage,
+        bool $rebuild = false,
         array $extra = null
     ) {
-        // Check if a build already exists for this commit ID:
-        $builds = $this->buildStore->getByProjectAndCommit($project->getId(), $commitId);
+        // Check if a build already exists for this commit ID when not rebuilding:
+        if (!$rebuild) {
+            $builds = $this->buildStore->getByProjectAndCommit($project->getId(), $commitId);
 
-        if ($builds['count']) {
-            return array(
-                'status' => 'ignored',
-                'message' => sprintf('Duplicate of build #%d', $builds['items'][0]->getId())
-            );
+            if ($builds['count']) {
+                return array(
+                    'status' => 'ignored',
+                    'message' => sprintf('Duplicate of build #%d', $builds['items'][0]->getId())
+                );
+            }
         }
 
         // If not, create a new build job for it:
@@ -437,7 +460,7 @@ class WebhookController extends \b8\Controller
     {
         $project = $this->projectStore->getById($projectId);
 
-        if (empty($projectId)) {
+        if (empty($project)) {
             throw new Exception('Project does not exist: ' . $projectId);
         }
 
