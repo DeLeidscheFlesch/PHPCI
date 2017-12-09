@@ -101,6 +101,7 @@ abstract class BaseCommandExecutor implements CommandExecutor
             list($this->lastOutput, $this->lastError) =
                 $this->readAlternating([$pipes[1], $pipes[2]]);
 
+            $status = proc_get_status($process);
             proc_close($process);
             $status = $processStatus['exitcode'];
         }
